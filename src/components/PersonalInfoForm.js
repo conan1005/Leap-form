@@ -27,6 +27,14 @@ const PersonalInfoForm = () => {
     });
   }, [formData]);
 
+  useEffect(() => {
+    // Check if all fields are filled and valid
+    const allFieldsFilled = Object.values(localFormData).every(value => value.trim() !== '');
+    const noErrors = Object.keys(errors).length === 0;
+
+    setIsButtonEnabled(allFieldsFilled && noErrors);
+  }, [localFormData, errors]);
+
   const validate = () => {
     const validationErrors = {};
     const currentDate = new Date();
@@ -162,11 +170,14 @@ const PersonalInfoForm = () => {
         </div>
       </div>
 
-      <SingleLine />
-      <div className='actions'>
-        <button className='back-button' onClick={handleBack}>Back</button>
-        <button onClick={handleNext}>Save & Continue</button>
+      <div className='footer'>
+        <SingleLine />
+        <div className='actions'>
+          <button className='back-button' onClick={handleBack}>Back</button>
+          <button className='save-and-continue-button' disabled={!isButtonEnabled} onClick={handleNext}>Save & Continue</button>
+        </div>
       </div>
+      
     </div>
   );
 };

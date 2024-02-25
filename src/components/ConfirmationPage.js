@@ -2,6 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useFormData } from '../FormDataContext';
 import './ConfirmationPage.css'; // Import CSS for ConfirmationPage
+import SingleLine from './SingleLine';
 
 
 
@@ -28,11 +29,11 @@ const ConfirmationPage = () => {
 
   return (
     <div className="confirmation-page">
-      {/* <h2>Confirm Your Information</h2> */}
+      <div className='confirm-heading'>Confirm Your Information</div>
       
       {/* Personal Info Section */}
       <div className="personal-info-section">
-        <div className='detail-headings'><h3>Personal Info</h3></div>
+        <div className='detail-headings'><h3>Personal Details</h3></div>
         <div className="row">
           <div className="col">
             <div className='item'><span className="label">First Name</span> <span className="value">{formData.firstName}</span></div>
@@ -72,9 +73,16 @@ const ConfirmationPage = () => {
           </div>
         </div>
       </div>
+
+      <div className='footer'>
+        <SingleLine />
+        <div className='actions'>
+          <button className='back-button' onClick={handleBack}>Back</button>
+          <button className='save-and-continue-button' onClick={handleSubmit}>Confirm and Submit</button>
+        </div>
+      </div>
       
-      <button onClick={handleBack}>Back</button>
-      <button onClick={handleSubmit}>Confirm and Submit</button>
+      
     </div>
   );
 };

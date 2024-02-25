@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useFormData } from '../FormDataContext';
 import './AddressInfoForm.css';
+import SingleLine from './SingleLine';
 
 const AddressInfoForm = () => {
   const navigate = useNavigate();
@@ -15,9 +16,9 @@ const AddressInfoForm = () => {
     zipCode: formData.zipCode || '',
   });
   const [errors, setErrors] = useState({});
+  const [isButtonEnabled, setIsButtonEnabled] = useState(false);
 
   useEffect(() => {
-    // Update local form data when form data context changes
     setLocalFormData({
       addressLine1: formData.addressLine1 || '',
       addressLine2: formData.addressLine2 || '',
@@ -27,6 +28,13 @@ const AddressInfoForm = () => {
       zipCode: formData.zipCode || '',
     });
   }, [formData]);
+
+  useEffect(() => {
+    // Check if all required fields are filled
+    const allRequiredFieldsFilled = Object.keys(localFormData).filter(key => key !== 'addressLine2').every(key => localFormData[key].trim() !== '');
+    const noErrors = Object.keys(errors).length === 0;
+    setIsButtonEnabled(allRequiredFieldsFilled && noErrors);
+  }, [localFormData, errors]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -52,6 +60,7 @@ const AddressInfoForm = () => {
     } else if (!/^\d{6}$/.test(localFormData.zipCode)) {
       validationErrors.zipCode = 'Zip Code is invalid';
     }
+    setErrors(validationErrors);
     return validationErrors;
   };
 
@@ -76,7 +85,7 @@ const AddressInfoForm = () => {
       <div className='form_address'>
         <div className="row">
           <div className="form-group col-md-6">
-            <label>Address Line 1 *</label>
+            <label>Address Line 1 <span className='required'>*</span></label>
             <input
               type="text"
               className={errors.addressLine1 ? "form-control is-invalid" : "form-control"}
@@ -155,10 +164,14 @@ const AddressInfoForm = () => {
         </div>
       </div>
 
-      <div className='actions'>
-        <button onClick={handleBack}>Back</button>
-        <button onClick={handleNext}>Finish</button>
+      <div className='footer'>
+        <SingleLine />
+        <div className='actions'>
+          <button  className='back-button' onClick={handleBack}>Back</button>
+          <button  className='save-and-continue-button' disabled={!isButtonEnabled} onClick={handleNext}>Finish</button>
+        </div>
       </div>
+
     </div>
   );
 };

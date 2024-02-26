@@ -1,6 +1,5 @@
 .form-submit-container {
     text-align:center;
-    margin-top: '50px';
     flex-direction: column;
     display: flex;
     justify-content: center;
@@ -12,6 +11,8 @@
     margin-left: 5%;
     margin-right: 5%;
     margin-top: 5%;
+
+        flex: 1;
 }
 
 .form-submit-title, .form-submit-subtitle {

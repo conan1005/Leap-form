@@ -1,26 +1,21 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useFormData } from '../FormDataContext';
-import './ConfirmationPage.css'; // Import CSS for ConfirmationPage
+import './ConfirmationPage.css'; 
 import SingleLine from './SingleLine';
 
-
-
-const ConfirmationPage = () => {
+const ConfirmationPage = ({ onNextStep, onPrevStep }) => {
   const { formData } = useFormData();
   const navigate = useNavigate();
 
   const handleSubmit = () => {
-    // Here you might want to actually submit the form data to a backend
     console.log('Submitting form data:', formData);
-
-    // Navigate to the form submitted page upon successful submission
-    navigate('/form-submitted');
+    onNextStep();
   };
 
   const handleBack = () => {
-    navigate("/address-info");
-  }
+    onPrevStep()
+  };
 
   const formatDate = (dateString) => {
     const options = { day: '2-digit', month: '2-digit', year: 'numeric' };
@@ -29,6 +24,8 @@ const ConfirmationPage = () => {
 
   return (
     <div className="confirmation-page">
+
+<div className='form-upper-body'>
       <div className='confirm-heading'>Confirm Your Information</div>
       
       {/* Personal Info Section */}
@@ -69,11 +66,15 @@ const ConfirmationPage = () => {
           <div className='item'><span className="label">State</span> <span className="value">{formData.state}</span></div>
           </div>
           <div className="col">
+          <div className='item'><span className="label">Country</span> <span className="value">{formData.country}</span></div>
+          </div>
+          <div className="col">
           <div className='item'><span className="label">Zip Code</span> <span className="value">{formData.zipCode}</span></div>
           </div>
         </div>
       </div>
 
+</div>
       <div className='footer'>
         <SingleLine />
         <div className='actions'>
@@ -81,8 +82,6 @@ const ConfirmationPage = () => {
           <button className='save-and-continue-button' onClick={handleSubmit}>Confirm and Submit</button>
         </div>
       </div>
-      
-      
     </div>
   );
 };

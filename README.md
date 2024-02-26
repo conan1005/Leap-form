@@ -1,70 +1,90 @@
-# Getting Started with Create React App
+# Eligibility Form Assignment
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
 
-In the project directory, you can run:
+<!-- PROJECT LOGO -->
 
-### `npm start`
+<h3 align="center">By Aaditya Gaur</h3>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+  <p align="center">
+A basic landing page with a multi-step form created using React.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+![image](/images/logo.png)
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<!-- ABOUT THE PROJECT -->
+## About The Project
+A responsive landing page having a multi-step form using React that includes validations at each step. The form captures personal information, address details, and utilizes API calls for Country, State, and City selections.
 
-### `npm run build`
+### Steps
+* Step 1: Personal Information
+* Step 2: Address Information
+* Step 3: Confirmation
+* Step 4: Submission
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Tech Stack
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+| Framework / Library                                  | Usage                                            |
+| ----------------------------------------------------- |--------------------------------------------------|
+| [React](https://reactjs.org/)                         | JavaScript library for building user interfaces. |
+| [Material UI](https://material-ui.com/)               | React UI framework for icons.                  |
+| [Bootstrap](https://getbootstrap.com/)                | For Responsive UI                  |
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+<!-- GETTING STARTED -->
+## Getting Started
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Here are the instructions on setting up the project locally.
+<br>
+To get a local copy up and running, follow these steps:
 
-## Learn More
+### Prerequisites
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+First, you need to download and install node.
+* Download node.js and npm.
+  ```sh
+  https://nodejs.org/en/download/
+  ```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Running the Project
 
-### Code Splitting
+1. Clone the repository.
+   ```sh
+   git clone https://github.com/conan1005/Leap-form.git
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+2. Install all the modules
+   ```sh
+    npm install
+   ```
 
-### Analyzing the Bundle Size
+3. Run the app locally
+   ```sh
+    npm start
+   ```
+4. Open the following URL in your browser
+   ```sh
+    http://localhost:3000/
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+<!-- USAGE EXAMPLES -->
+## Great! You're all done.
+![project-image](/images/home.png)
+![project-image](/images/home2.png)
+![project-image](/images/pg1_empty.png)
+![project-image](/images/pg1_error.png)
+![project-image](/images/pg1_filled.png)
+![project-image](/images/pg2_filled.png)
+![project-image](/images/pg3.png)
+![project-image](/images/pg4.png)
+<!-- CONTACT -->
+## Contact
 
-### Making a Progressive Web App
+Email: [aaditya.gaur1005@gmail.com](aaditya.gaur1005@gmail.com)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Project Link: [https://github.com/conan1005/Leap-form](https://github.com/conan1005/Leap-form)
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

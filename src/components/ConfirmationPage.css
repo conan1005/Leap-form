@@ -1,12 +1,10 @@
 /* ConfirmationPage.css */
-.confirmation-page {
-  padding: 3%;
-}
+
 
 .confirm-heading {
   font-family: 'Poppins', sans-serif; /* Use Poppins for values */
   font-weight: 500;
-  font-size: 1.8rem;
+  font-size: 2rem;
   text-align: center;
 }
 
@@ -46,5 +44,14 @@
 }
 
 .address-details-section, .personal-info-section {
-  margin-top: 35px;
+  margin-top: 45px;
+}
+
+
+.confirmation-page {
+  display: flex;
+        flex-direction: column;
+        justify-content: space-between; /* This will push the footer down */
+        padding-bottom: 20px; /* Optional: Adjust based on your design */
+        flex: 1;
 }
